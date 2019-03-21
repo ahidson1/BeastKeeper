@@ -1,0 +1,54 @@
+﻿@{
+
+}
+@Html.Hidden("BeastId", null, new { @id = "BeastId" })
+<div ng-app="BeastKeeperProfile">
+    <div ng-controller="BeastProfileController">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">
+                    {{Beast.Name}} - General Information
+                </span>
+            </div>
+            <div class="panel-body">
+                <label>Name</label><br/>
+                <input type="text" ng-model="Beast.Name" name="name" class="form-control"/><br/>
+                <label>Description</label><br />
+                <textarea ng-model="Beast.Description" name="description" class="form-control"></textarea><br />
+
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                Reminders
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    <table class="table-bordered">
+                        <thead>
+                            <td></td>
+                            <td></td>
+                            <td><button class="" type="button"><span class="glyphicon-plus-sign"></span> Add reminder</button></td>
+                        </thead>
+                            <tbody>
+                                <tr ng-repeat="reminder in Beast.Reminders">
+                                    <td>{{reminder.Description}}</td>
+                                    <td>{{reminder.DueDate}}</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+
+
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/Profile/controller.js"></script>
+    <script src="~/Scripts/Profile/main.js"></script>
+    <script src="~/Scripts/Models/beastKeeperModels.js"></script>
+}

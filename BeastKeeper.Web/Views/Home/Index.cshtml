@@ -1,0 +1,30 @@
+﻿@{
+    
+}
+
+<div ng-app="BeastKeeperList">
+    <div ng-controller="BeastListController">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">
+                    Beastiary
+                </span>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    <div class="list-group-item" ng-repeat="beast in Beasts" ng-click="ctrl.beastSelected(beast.Id)">
+                        {{beast.Name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/Index/controller.js"></script>
+    <script src="~/Scripts/Index/main.js"></script>
+    <script src="~/Scripts/Models/beastKeeperModels.js"></script>
+}
